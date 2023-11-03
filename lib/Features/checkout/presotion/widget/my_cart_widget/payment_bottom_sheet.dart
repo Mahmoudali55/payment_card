@@ -4,6 +4,7 @@ import 'package:payment_app/Features/checkout/presotion/widget/payment_view/paym
 import 'package:payment_app/core/utils/style.dart';
 
 import 'button_view.dart';
+import 'custom_button_bloc_consumer.dart';
 
 class PaymentMethodsBottomSheet extends StatelessWidget {
   const PaymentMethodsBottomSheet({Key? key}) : super(key: key);
@@ -18,9 +19,10 @@ class PaymentMethodsBottomSheet extends StatelessWidget {
           SizedBox(height: 16,),
           PaymentMethods(),
           SizedBox(height: 32,),
-          ButtonView(text: 'Continue', style: Style.style20,)
+          CustomButtonBlocConsumer()
         ],
       ),
     );
   }
 }
+
