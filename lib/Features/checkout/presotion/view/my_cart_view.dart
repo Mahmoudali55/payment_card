@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 
-
-
-
 import '../widget/my_cart_widget/MyCartViewBody.dart';
 import '../widget/my_cart_widget/buildAppBar.dart';
 
@@ -16,10 +13,4 @@ class MyCartView extends StatelessWidget {
       body: MyCartViewBody(),
     );
   }
-
-
-  }
-
-
-
-
+}

@@ -19,37 +19,58 @@ class MyCartViewBody extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(
         children: [
-          SizedBox(height: 18,),
+          SizedBox(
+            height: 18,
+          ),
           Expanded(child: Image.asset('assets/images/Group 6.png')),
-          SizedBox(height: 25,),
+          SizedBox(
+            height: 25,
+          ),
           OrderInfoItem(
-            title: "Order Subtotal", value: "\$42.97", style: Style.style18,),
-          SizedBox(height: 3,),
+            title: "Order Subtotal",
+            value: "\$42.97",
+            style: Style.style18,
+          ),
+          SizedBox(
+            height: 3,
+          ),
           OrderInfoItem(title: "Discount", value: "\$0", style: Style.style18),
-          SizedBox(height: 3,),
+          SizedBox(
+            height: 3,
+          ),
           OrderInfoItem(title: "Shipping", value: "\$8", style: Style.style18),
-          SizedBox(height: 17,),
-          Divider(thickness: 2, endIndent: 12, indent: 12,),
+          SizedBox(
+            height: 17,
+          ),
+          Divider(
+            thickness: 2,
+            endIndent: 12,
+            indent: 12,
+          ),
           OrderInfoItem(title: "Total", value: "\$50.97", style: Style.style25),
-          SizedBox(height: 16,),
-          ButtonView(text: 'Complete Payment',
+          SizedBox(
+            height: 16,
+          ),
+          ButtonView(
+              text: 'Complete Payment',
               style: Style.style24,
               onTap: () {
                 showModalBottomSheet(
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(16)
-                    ),
-                    context: context, builder: (context) {
-                  return BlocProvider(
-                    create: (context) => PaymentCubit(CheckoutRepoImpl()),
-                    child: PaymentMethodsBottomSheet(),
-                  );
-                });
+                        borderRadius: BorderRadius.circular(16)),
+                    context: context,
+                    builder: (context) {
+                      return BlocProvider(
+                        create: (context) => PaymentCubit(CheckoutRepoImpl()),
+                        child: PaymentMethodsBottomSheet(),
+                      );
+                    });
               }),
-          SizedBox(height: 12,),
+          SizedBox(
+            height: 12,
+          ),
         ],
       ),
     );
   }
 }
-

@@ -1,5 +1,3 @@
-
-
 import 'dart:developer';
 
 import 'package:flutter/cupertino.dart';
@@ -21,45 +19,45 @@ class PaymentDetailsBody extends StatefulWidget {
 }
 
 class _PaymentDetailsBodyState extends State<PaymentDetailsBody> {
-  final GlobalKey<FormState> formKey=GlobalKey();
-  AutovalidateMode autovalidateMode=AutovalidateMode.disabled;
+  final GlobalKey<FormState> formKey = GlobalKey();
+  AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 12),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
       child: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
-          child:  PaymentMethods(),
+            child: PaymentMethods(),
           ),
           SliverToBoxAdapter(
-            child: CustomCreditCard(formKay: formKey,
-              autovalidateMode: autovalidateMode,),
+            child: CustomCreditCard(
+              formKay: formKey,
+              autovalidateMode: autovalidateMode,
+            ),
           ),
           SliverFillRemaining(
-            child: Align(child:
-            ButtonView(text: 'pay',style: Style.style25,onTap: (){
-              if(formKey.currentState!.validate()
-              ){
-                formKey.currentState!.save();
-                log('payment');
-              }else{
-                Navigator.of(context).push(MaterialPageRoute(builder: (context){
-                  return ThankYouView();
-                }));
-                autovalidateMode=AutovalidateMode.always;
-                setState(() {
-
-                });
-              }
-            },)),
+            child: Align(
+                child: ButtonView(
+              text: 'pay',
+              style: Style.style25,
+              onTap: () {
+                if (formKey.currentState!.validate()) {
+                  formKey.currentState!.save();
+                  log('payment');
+                } else {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (context) {
+                    return ThankYouView();
+                  }));
+                  autovalidateMode = AutovalidateMode.always;
+                  setState(() {});
+                }
+              },
+            )),
           )
         ],
-
-
-
       ),
     );
   }
 }
-

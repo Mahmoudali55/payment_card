@@ -16,13 +16,16 @@ class PaymentMethodsBottomSheet extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          SizedBox(height: 16,),
+          SizedBox(
+            height: 16,
+          ),
           PaymentMethods(),
-          SizedBox(height: 32,),
+          SizedBox(
+            height: 32,
+          ),
           CustomButtonBlocConsumer()
         ],
       ),
     );
   }
 }
-

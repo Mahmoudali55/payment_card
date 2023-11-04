@@ -5,11 +5,9 @@ import 'package:payment_app/core/utils/api_keys.dart';
 import 'Features/checkout/presotion/view/my_cart_view.dart';
 
 void main() {
-  Stripe.publishableKey=ApiKeys.publishableKey;
+  Stripe.publishableKey = ApiKeys.publishableKey;
   runApp(const CheckoutApp());
 }
-
-
 
 class CheckoutApp extends StatelessWidget {
   const CheckoutApp({Key? key}) : super(key: key);
@@ -18,7 +16,7 @@ class CheckoutApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MyCartView() ,
+      home: MyCartView(),
     );
   }
 }
@@ -27,6 +25,6 @@ class CheckoutApp extends StatelessWidget {
 //PresentPaymentSheet
 
 //paymentIntModel create payment intent(amount ,currency,customerId)
-//key secret createEphemeralKey(stripeVersion , customerId)
+//key secret createEphemeralKey( , customerId)
 //initPaymentSheet(merchantDisplayName,intentClientSecret,ephemeralKeySecret)
 //presentPaymentSheet()
